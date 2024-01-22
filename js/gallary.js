@@ -86,7 +86,6 @@ function imageGallery() {
   gallary.innerHTML = image;
 
   gallary.addEventListener("click", (e) => {
-    if (e.target.nodeName !== "IMG") return;
     const targetImage = e.target.closest(".gallery-image");
     if (targetImage) {
       e.preventDefault();
