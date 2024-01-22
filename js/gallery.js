@@ -64,7 +64,7 @@ const images = [
   },
 ];
 
-const gallary = document.querySelector(".gallery");
+const gallery = document.querySelector(".gallery");
 
 function imageGallery() {
   const image = images
@@ -81,9 +81,9 @@ function imageGallery() {
     </li>`;
     })
     .join("\n");
-  gallary.innerHTML = image;
+  gallery.innerHTML = image;
 
-  gallary.addEventListener("click", (e) => {
+  gallery.addEventListener("click", (e) => {
     const targetImage = e.target.closest(".gallery-image");
     if (targetImage) {
       e.preventDefault();
@@ -91,7 +91,7 @@ function imageGallery() {
       const imageAlt = targetImage.getAttribute("alt");
       const instance = basicLightbox.create(
         `
-          <img src="${largeImageSource}" alt="Large image: ${imageAlt}">
+          <img src="${largeImageSource}" alt="Large image: ${imageAlt}"/>
         `,
         {
           onShow: (instance) => {
