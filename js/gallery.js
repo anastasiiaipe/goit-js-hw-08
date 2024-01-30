@@ -84,7 +84,7 @@ function imageGallery() {
   gallery.innerHTML = image;
 
   gallery.addEventListener("click", (e) => {
-    const targetImage = e.target.closest(".gallery-image");
+    const targetImage = e.target.closest(".gallery-item img");
     if (targetImage) {
       e.preventDefault();
       const largeImageSource = targetImage.getAttribute("data-source");
@@ -94,10 +94,10 @@ function imageGallery() {
           <img src="${largeImageSource}" alt="Large image: ${imageAlt}"/>
         `,
         {
-          onShow: (instance) => {
+          onShow: () => {
             document.addEventListener("keydown", handleKeyPress);
           },
-          onClose: (instance) => {
+          onClose: () => {
             document.removeEventListener("keydown", handleKeyPress);
           },
         }
